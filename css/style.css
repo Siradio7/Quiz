@@ -1,0 +1,311 @@
+@font-face {
+    font-family: pol1;
+    src: url(Polices/Excellent\ Display\ Font\ Bold.ttf);
+}
+
+@font-face {
+    font-family: pol2;
+    src: url(Polices/DESIGNER.otf);
+}
+
+@font-face {
+    font-family: pol3;
+    src: url(Polices/DS-DIGI.TTF);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.conteneur{
+    width: 100%;
+    height: 100%;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.baniere_haut{
+    position: relative;
+    background-color: rgb(53, 60, 65);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 2px rgb(0, 0, 0);
+    font-family: pol1;
+    color: rgb(41, 165, 247);
+    letter-spacing: .05cm;
+}
+
+.baniere_haut h4 {
+    position: relative;
+    top: 45%;
+    transform: translateY(-70%);
+}
+
+.titre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    padding: -5px;
+    position: relative;
+    text-align: center;
+}
+
+.place_question{
+    width: 98%;
+    min-height: 120px;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    box-shadow: 4px 3px rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(152, 170, 167);
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.place_question::before {
+    content: 'Question : ';
+    z-index: 5;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    color:rgb(0, 0, 0);
+    font-family: pol1;
+    letter-spacing: .1cm;
+}
+
+.btn{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(104, 107, 109);
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    transition: all .5s ease-in-out;
+    position: relative;
+    font-family: pol1;
+    letter-spacing: .05cm;
+}
+
+.btn:hover{
+    background-color: black;
+}
+
+.reponses, #place_score_reste{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgb(152, 170, 167);
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.reponse{
+    background-color: rgba(145, 153, 158, 0.815);
+    color: rgb(0, 0, 0);
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-size: 13px;
+    font-family: monospace;
+    transition: all 1s ease-out;
+    text-align: center;
+}
+
+.reponse:hover{
+    background-color: rgb(61, 60, 60);
+    color: white;
+    width: 80%;
+    letter-spacing: .05cm;
+    box-shadow: 2px 2px rgb(44, 43, 43);
+    cursor: pointer;
+}
+
+#place_score_reste {
+    width: 200px;
+}
+
+img{
+    position: relative;
+    width: 80px;
+    height: 70px;
+}
+
+
+.affiche {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.description {
+    position: relative;
+    margin: 0 1px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0 10px;
+}
+
+#mauvaise-reponse {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: black;
+    width: 100%;
+    color: red;
+    text-align: center;
+    position: fixed;
+    display: none;
+    z-index: 3;
+}
+
+#bonne-reponse {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: rgb(45, 187, 88);
+    width: 100%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    position: fixed;
+    display: none;
+    z-index: 3;
+}
+
+#fin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(221, 221, 221);
+    width: 50%;
+    height: 200px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    position: fixed;
+    display: none;
+    z-index: 3;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.664);
+}
+
+#fin #croix {
+    position: absolute;
+    right: 10px;
+    font-size: 15px;
+    top: -6px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    padding: 2px 5px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* Pour les téléphones */
+@media (max-width: 400px) {
+    @font-face {
+        font-family: Excel;
+        src: url(Polices/Black\ Spider.ttf);
+    }
+
+    .baniere_haut{
+        height: 70px;
+    }
+    
+    .baniere_haut h4 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: rgb(41, 165, 247);
+        transform: translateY(-50%);
+        letter-spacing: .07cm;
+        font-size: 11px;
+        top: 40%;
+        transform: translateY(-70%);
+        font-family: Excel;
+    }
+    
+    .titre{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        background-color: rgb(255, 255, 255);
+        margin: 5px;
+        padding: -5px;
+        position: relative;
+    }
+
+    img {
+        height: 40px;
+        width: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    h3 {
+        font-size: 13px;
+    }
+
+    .description p {
+        font-size: 13px;
+    }
+
+    .place_question, .reponse {
+        max-width: 100%;
+        font-size: 12px;
+        box-shadow: none;
+    }
+
+    .reponse:hover {
+        box-shadow: none;
+        letter-spacing: normal;
+        width: 70%;
+    }
+
+    #place_score_reste {
+        width: 150px;
+        font-size: 10px;
+    }
+}
